@@ -54,6 +54,7 @@ class LeadershipAPIView(APIView):
         principles = CommandPrinciple.objects.all()
 
         return Response({
+            "test_deploy": "working_37bbb06",
             "director": LeadershipDirectorSerializer(director, context={'request': request}).data if director else None,
             "locations": StrategicNodeSerializer(locations, many=True, context={'request': request}).data,
             "principles": CommandPrincipleSerializer(principles, many=True).data
